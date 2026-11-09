@@ -1,5 +1,6 @@
-## NEXT
+## 2.4.5
 
+* Documents the public `CubeGenerator` API.
 * Updates minimum supported SDK version to Flutter 3.44/Dart 3.12.
 
 ## 2.4.4
