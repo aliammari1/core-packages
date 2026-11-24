@@ -4,7 +4,7 @@
 
 part of '../../../vector_math_geometry.dart';
 
-/// Generates a cube mesh centered at the origin.
+/// Generates an axis-aligned box mesh centered at the origin.
 class CubeGenerator extends GeometryGenerator {
   late double _width;
   late double _height;
@@ -16,11 +16,13 @@ class CubeGenerator extends GeometryGenerator {
   @override
   int get indexCount => 36;
 
-  /// Creates a cube mesh with the given [width], [height], and [depth].
+  /// Creates a box mesh with the given half-extents [width], [height], and
+  /// [depth].
   ///
-  /// The parameters are half-extents: the cube spans from negative to
-  /// positive values along each axis, so its overall dimensions are
-  /// `2 * width` by `2 * height` by `2 * depth`.
+  /// The mesh spans from `-width` to `width` along the X axis, from `-height`
+  /// to `height` along the Y axis, and from `-depth` to `depth` along the Z
+  /// axis, so its overall dimensions are `2 * width` by `2 * height` by
+  /// `2 * depth`. The result is a cube only when all three values are equal.
   ///
   /// The [flags] parameter configures which vertex attributes to generate, and
   /// [filters] specifies any mesh transformations to apply after generation.
